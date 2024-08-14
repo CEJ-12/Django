@@ -1,0 +1,20 @@
+{%extends 'layout.html'%}
+{%block title%}
+{{titulo}}
+{%endblock%}
+
+{%block content%}
+<h1 class= "title">Página Index</h1>
+<h2>Usango templates</h2>
+{% if mensaje  %}
+mensaje: {{mensaje}}
+{% else %}
+mensaje: <h2>mensaje vacio</h2>
+{% endif %}
+{%include 'listado_estudiantesregistrados.html' with encabezado="Estudiantes Registrados"%}
+{%include 'filtros.html' with encabezado="Uso de Filtros" %}
+{%endblock%}
+
+<!-- Observación: “Si utilizamos only en el include, significa que listado_estudiantesregistrados.html, 
+ solo va a heredar la variable indicada.” -->
+

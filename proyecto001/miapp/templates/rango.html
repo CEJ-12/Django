@@ -1,0 +1,23 @@
+{%extends 'layout.html'%}
+{%block title%}
+{{tutilo}}
+{%endblock%}
+
+{%block content%}
+<form method="POST">
+    {% csrf_token %}
+    <label for="num1">Ingrese Numero 1:</label>
+    <input type="number" id="num1" name="num1">
+    <label for="number">Ingrese Numero 2:</label>
+    <input type="rango" id="num2" name="num2">
+    <button type="submit" >Calcular</button>
+</form>
+<h1 class="title">Lista de numeros del [{{a}},{{b}}]:</h1>
+<ul>
+{% for i in rango_numeros%}
+<li>{{i}}</li> 
+{% empty %}
+<strong>Rango vacío</strong>
+{% endfor %}
+</ul>
+{%endblock%}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {%endblock%}
+    </title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <header>
+        <div id="logotipo">
+            <img src="{% static 'imagenes/logotipo.png' %}" />
+            <h1>Proyecto Web</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}"> Inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'saludo' %}"> Mensaje de Saludo</a>
+            </li>
+            <li>
+                <a href="{% url 'rango' %}"> Mostrar Números [a,b]</a>
+            </li>
+            <li>
+                <a href="{% url 'listar_articulos' %}">Listar Articulos</a>
+            </li>
+            <li>
+                <a href="{% url 'create_articulo' %}"> Crear Artículo</a>
+             </li>
+             <li>
+                <a href="{% url 'create_autor' %}"> Crear Autor</a>
+             </li>
+             <li>
+                <a href="{% url 'create_full_articulo' %}"> Crear Articulo2</a>
+             </li>
+        </ul>
+    </nav>
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+    <div id="content">
+        <div class="box">
+        {%block content%}
+        <strong>contenido padre, por defecto si no se define un content</strong>
+        {%endblock%}
+        </div>
+    </div>
+    <footer>
+        pie de pagina // para agregar fecha {% now "d/m/Y h:m:s" %}
+    </footer>
+
+</body>
+</html>

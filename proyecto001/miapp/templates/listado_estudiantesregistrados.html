@@ -1,0 +1,14 @@
+<br>
+<br>
+<hr>
+<br>
+<p> <strong>{{encabezado}}/ Lista de estudiantes(imprimiendo simplemente la lista): </strong></p>
+{{estudiantes}}
+<p><strong>{{encabezado}}/ Estudiantes Listados (con for): </strong></p>
+<ul>
+    {%for estudiante in estudiantes%}
+    <li>{{forloop.counter}}. {{estudiante}}</li>
+    {% empty %}
+    <p> No hay {{encabezado}}  </p>
+    {%endfor%}
+</ul>
